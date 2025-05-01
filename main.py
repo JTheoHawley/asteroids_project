@@ -42,7 +42,7 @@ def main():
         for aster in asteroid_group:
             for shot in shots_group:
                 if aster.collision(shot):
-                    aster.kill()
+                    aster.split()
                     shot.kill()
 
         for aster in asteroid_group:
