@@ -40,6 +40,12 @@ def main():
         updatable.update(dt)
 
         for aster in asteroid_group:
+            for shot in shots_group:
+                if aster.collision(shot):
+                    aster.kill()
+                    shot.kill()
+
+        for aster in asteroid_group:
             if aster.collision(player):
                 print("Game over!")
                 sys.exit()
